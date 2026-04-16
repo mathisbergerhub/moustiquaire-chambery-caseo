@@ -40,8 +40,7 @@ const solutions = [
     num: "01",
     title: "Moustiquaire enroulable",
     desc: "La solution la plus demandée pour les fenêtres. Facile à ouvrir, discrète une fois relevée, durable au quotidien.",
-    ideal:
-      "Idéale pour chambre, cuisine, salle de bain et fenêtres fréquemment ouvertes",
+    ideal: "Idéale pour chambre, cuisine, salle de bain et fenêtres fréquemment ouvertes",
   },
   {
     num: "02",
@@ -172,12 +171,6 @@ const localBusinessSchema = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
-      closes: "12:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "13:30",
       closes: "18:00",
     },
     {
@@ -238,6 +231,7 @@ export default function Home() {
         <meta property="og:url" content={canonicalUrl} />
         <meta name="theme-color" content="#f48221" />
         <link rel="canonical" href={canonicalUrl} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -280,9 +274,7 @@ export default function Home() {
             <div className="hero-copy">
               <div className="hero-topline">
                 <span className="hero-tag">Caséo Chambéry - Voglans</span>
-                <span className="hero-review-badge">
-                  Avis clients visibles en ligne
-                </span>
+                <span className="hero-review-badge">⭐ 4,5/5 - 84 avis</span>
               </div>
 
               <h1>
@@ -298,9 +290,9 @@ export default function Home() {
               </p>
 
               <div className="hero-points">
-                <span>Prise de mesures à domicile</span>
-                <span>Fabrication sur vos cotes</span>
-                <span>Pose par nos techniciens</span>
+                <span>✔ Prise de mesures à domicile</span>
+                <span>✔ Fabrication sur vos cotes</span>
+                <span>✔ Pose par nos techniciens</span>
               </div>
 
               <div className="hero-actions">
@@ -353,12 +345,7 @@ export default function Home() {
                 <a href={devisUrl} className="btn btn-primary">
                   Demander un devis
                 </a>
-                <a
-                  href={mapsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-dark-outline"
-                >
+                <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn btn-dark-outline">
                   Voir l’itinéraire
                 </a>
               </div>
@@ -458,7 +445,7 @@ export default function Home() {
             <div className="benefits-grid">
               {benefits.map((benefit) => (
                 <div key={benefit} className="benefit-card">
-                  <span className="benefit-check">✓</span>
+                  <span className="benefit-check">✔</span>
                   <p>{benefit}</p>
                 </div>
               ))}
@@ -480,10 +467,10 @@ export default function Home() {
               <div className="why-feature">
                 <div className="why-feature-label">Preuve sociale</div>
                 <div className="why-feature-title">
-                  Des avis clients consultables en ligne
+                  4,5/5 sur 84 avis pour Caséo Chambéry
                 </div>
                 <p>
-                  Les retours clients rassurent avant un devis. Ils montrent la
+                  Les avis clients rassurent avant un devis. Ils montrent la
                   qualité de l’accueil, du conseil, de la pose et du suivi du
                   projet.
                 </p>
@@ -571,13 +558,13 @@ export default function Home() {
             <p className="section-tag">Avis clients</p>
             <h2>Des retours visibles en ligne pour vous rassurer</h2>
             <p className="section-text">
-              Voici quelques retours publics consultables en ligne pour le
-              showroom Caséo Chambéry.
+              Caséo Chambéry affiche une note de 4,5/5 sur 84 avis. Voici
+              quelques retours publics consultables en ligne.
             </p>
 
             <div className="reviews-header">
               <div className="reviews-badge">
-                <strong>Avis clients publics</strong>
+                <strong>4,5/5 - 84 avis</strong>
                 <span>Caséo Chambéry</span>
               </div>
               <a
@@ -650,7 +637,7 @@ export default function Home() {
                 <iframe
                   src={mapsEmbedUrl}
                   className="map-frame"
-                  allowFullScreen
+                  allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Carte Caséo Chambéry"
@@ -713,11 +700,16 @@ export default function Home() {
               et baie vitrée
             </h2>
             <p className="section-text">
-              Caséo Chambéry vous accompagne pour votre projet de moustiquaire
-              sur mesure, de la prise de mesures à la pose finale. Nos solutions
-              sont adaptées aux fenêtres, portes-fenêtres et baies vitrées, avec
-              un accompagnement local, un showroom accessible et une fabrication
-              sur mesure pour Chambéry et ses environs.
+              Si vous recherchez une moustiquaire à Chambéry, une pose de
+              moustiquaire à Chambéry ou une installation de moustiquaire sur
+              mesure pour votre maison, Caséo Chambéry vous accompagne de la
+              prise de mesures à la pose finale. Nous proposons des solutions
+              adaptées aux fenêtres, portes-fenêtres et baies vitrées, avec une
+              approche locale, un showroom accessible et une fabrication sur
+              mesure. Cette page a été conçue pour répondre aux besoins des
+              habitants de Chambéry et des communes voisines qui souhaitent
+              aérer leur logement sans laisser entrer les moustiques ni les
+              insectes.
             </p>
           </div>
         </section>
