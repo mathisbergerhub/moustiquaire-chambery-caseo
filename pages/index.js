@@ -267,7 +267,11 @@ export default function Home() {
       <header className="site-header">
         <div className="container header-inner">
           <a href="#top" className="logo logo-image-wrap">
-            <img src={logoImage} alt="Logo Caséo Chambéry" className="logo-image" />
+            <img
+              src={logoImage}
+              alt="Logo Caséo Chambéry"
+              className="logo-image"
+            />
           </a>
 
           <nav className="nav">
