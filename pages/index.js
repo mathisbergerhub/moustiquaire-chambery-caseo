@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useState } from "react";
 
 const canonicalUrl = "https://moustiquaire-chambery-caseo.vercel.app/";
+const ogImage = `${canonicalUrl}images/showroom-caseo-chambery.jpeg`;
+
 const showroomUrl =
   "https://www.caseo-maison.com/magasins/page/caseo-chambery-voglans-85/magasin-fenetre-chambery-caseo-71";
 const devisUrl = "https://www.caseo-maison.com/devis";
@@ -161,7 +163,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: "Caséo Chambéry - Menuiserie Diffusion",
-  image: showroomImage,
+  image: ogImage,
   url: canonicalUrl,
   telephone: "+33479344852",
   description:
@@ -243,9 +245,10 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={showroomImage} />
+        <meta property="og:image" content={ogImage} />
         <meta name="theme-color" content="#f48221" />
         <link rel="canonical" href={canonicalUrl} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -385,6 +388,34 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="hero-gallery">
+          <div className="container hero-gallery-grid">
+            <article className="hero-gallery-card large">
+              <img
+                src={showroomImage}
+                alt="Showroom Caséo Chambéry"
+                loading="lazy"
+              />
+              <div className="hero-gallery-copy">
+                <span>Showroom Caséo Chambéry</span>
+                <strong>Découvrez les modèles exposés en magasin</strong>
+              </div>
+            </article>
+
+            <article className="hero-gallery-card">
+              <img
+                src={magasinImage}
+                alt="Magasin Caséo Chambéry"
+                loading="lazy"
+              />
+              <div className="hero-gallery-copy">
+                <span>Magasin</span>
+                <strong>Un accompagnement local pour votre projet</strong>
+              </div>
+            </article>
           </div>
         </section>
 
