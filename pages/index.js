@@ -14,6 +14,7 @@ const mapsEmbedUrl =
 const phoneDisplay = "04 79 34 48 52";
 const phoneLink = "tel:+33479344852";
 
+const logoImage = "/images/logo-caseo.svg";
 const showroomImage = "/images/showroom-caseo-chambery.jpeg";
 const magasinImage = "/images/magasin-caseo-chambery.jpeg";
 const fenetreImage = "/images/moustiquaire-magasin-fenetre.jpeg.jpeg";
@@ -265,12 +266,8 @@ export default function Home() {
 
       <header className="site-header">
         <div className="container header-inner">
-          <a href="#top" className="logo">
-            <div className="logo-badge">C</div>
-            <div className="logo-text">
-              <strong>Caséo Chambéry</strong>
-              <span>Moustiquaires sur mesure</span>
-            </div>
+          <a href="#top" className="logo logo-image-wrap">
+            <img src={logoImage} alt="Logo Caséo Chambéry" className="logo-image" />
           </a>
 
           <nav className="nav">
@@ -338,14 +335,6 @@ export default function Home() {
             </div>
 
             <div className="hero-side">
-              <div className="hero-showroom-shot">
-                <img
-                  src={showroomImage}
-                  alt="Showroom Caséo Chambéry"
-                  loading="eager"
-                />
-              </div>
-
               <div className="hero-panel">
                 <div className="hero-panel-label">Votre showroom local</div>
                 <div className="hero-panel-title">
