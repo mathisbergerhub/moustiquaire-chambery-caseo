@@ -5,10 +5,11 @@ const canonicalUrl = "https://landing-moustiquaires.vercel.app/";
 const showroomUrl =
   "https://www.caseo-maison.com/magasins/page/caseo-chambery-voglans-85/magasin-fenetre-chambery-caseo-71";
 const devisUrl = "https://www.caseo-maison.com/devis";
-const mapsUrl =
-  "https://www.google.com/maps/place/CASEO+Chamb%C3%A9ry/@45.5644385,5.8911212,17z/";
+const mapsUrl = "https://maps.app.goo.gl/hsRmYYPDsB5QcNK98";
 const mapsEmbedUrl =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2775923.340662299!2d1.4331651417110982!3d47.19970105736059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba7f4992eba1f%3A0x9ea3fb9aab31d495!2zQ0FTw4lPIENoYW1iw6lyeQ!5e0!3m2!1sfr!2sfr!4v1776328547399!5m2!1sfr!2sfr";
+const reviewsUrl =
+  "https://www.caseo-maison.com/avis-clients/magasins/avis-caseo-chambery-85";
 
 const openingHours = [
   { day: "Lundi", hours: "08h00-12h00 / 13h30-18h00" },
@@ -75,6 +76,27 @@ const zones = [
   "Le Bourget-du-Lac",
 ];
 
+const reviews = [
+  {
+    name: "karine routin",
+    rating: "5/5",
+    date: "4 novembre 2025",
+    text: "Très professionnel",
+  },
+  {
+    name: "PATRICIA RENAUD",
+    rating: "5/5",
+    date: "6 juin 2025",
+    text: "Je suis tout à fait satisfaite. Jean-Claude a été efficace, fiable et très agréable.",
+  },
+  {
+    name: "Verdoia Jean Daniel",
+    rating: "5/5",
+    date: "20 février 2024",
+    text: "Très bon rapport qualité prix, le service est excellent et les matériaux de bonne qualités. Je recommande les yeux fermés car je suis satisfait du résultat.",
+  },
+];
+
 const faqs = [
   {
     question: "Quel type de moustiquaire choisir pour ma fenêtre ?",
@@ -139,7 +161,7 @@ const localBusinessSchema = {
     name: "Caséo",
     url: "https://www.caseo-maison.com/",
   },
-  sameAs: [showroomUrl, mapsUrl],
+  sameAs: [showroomUrl, mapsUrl, reviewsUrl],
 };
 
 const faqSchema = {
@@ -207,7 +229,7 @@ export default function Home() {
             <a href="#pourquoi">Pourquoi Caséo</a>
             <a href="#local">Magasin & horaires</a>
             <a href="#faq">FAQ</a>
-            <a href={devisUrl} className="btn btn-primary">
+            <a href={devisUrl} className="btn btn-primary nav-cta">
               Demander un devis
             </a>
           </nav>
@@ -335,8 +357,8 @@ export default function Home() {
             <p className="section-tag">Moustiquaire Chambéry</p>
             <h2>Des solutions adaptées à chaque ouverture</h2>
             <p className="section-text">
-              Fenêtre de chambre, porte-fenêtre de terrasse ou grande baie vitrée
-              : nous avons la moustiquaire faite pour vous.
+              Fenêtre de chambre, porte-fenêtre de terrasse ou grande baie
+              vitrée : nous avons la moustiquaire faite pour vous.
             </p>
 
             <div className="solutions-grid">
@@ -431,8 +453,8 @@ export default function Home() {
             <p className="section-tag">Magasin & horaires</p>
             <h2>Retrouvez Caséo Chambéry au showroom</h2>
             <p className="section-text">
-              Tous les accès utiles sont ici : devis, téléphone, carte du magasin
-              et horaires du showroom.
+              Tous les accès utiles sont ici : devis, téléphone, carte du
+              magasin et horaires du showroom.
             </p>
 
             <div className="local-grid">
@@ -503,13 +525,62 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section section-reviews">
+          <div className="container">
+            <p className="section-tag">Avis clients</p>
+            <h2>Des avis réels visibles en ligne</h2>
+            <p className="section-text">
+              Voici quelques retours publics du showroom Caséo Chambéry.
+            </p>
+
+            <div className="reviews-header">
+              <div className="reviews-badge">
+                <strong>33 avis</strong>
+                <span>Caséo Chambéry</span>
+              </div>
+              <a
+                href={reviewsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary"
+              >
+                Voir tous les avis
+              </a>
+            </div>
+
+            <div className="reviews-grid">
+              {reviews.map((review) => (
+                <article
+                  key={`${review.name}-${review.date}`}
+                  className="review-card"
+                >
+                  <div className="review-top">
+                    <strong>{review.name}</strong>
+                    <span>{review.rating}</span>
+                  </div>
+                  <p className="review-date">{review.date}</p>
+                  <p className="review-text">“{review.text}”</p>
+                  <a
+                    href={reviewsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="review-link"
+                  >
+                    Consulter la source
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="zones" className="section section-dark">
           <div className="container">
             <p className="section-tag dark-tag">Zones desservies</p>
             <h2>Chambéry et ses environs</h2>
             <p className="section-text dark-text">
-              Nous intervenons pour la pose de moustiquaires sur mesure à Chambéry
-              et dans les communes alentour du bassin chambérien.
+              Nous intervenons pour la pose de moustiquaires sur mesure à
+              Chambéry et dans les communes alentour du bassin chambérien.
             </p>
 
             <div className="zones-grid">
@@ -536,7 +607,9 @@ export default function Home() {
                     aria-expanded={openFaq === i}
                   >
                     {f.question}
-                    <span className={openFaq === i ? "faq-plus open" : "faq-plus"}>
+                    <span
+                      className={openFaq === i ? "faq-plus open" : "faq-plus"}
+                    >
                       +
                     </span>
                   </button>
@@ -553,8 +626,8 @@ export default function Home() {
               <h2>Votre moustiquaire sur mesure à Chambéry commence ici</h2>
               <p>
                 Devis gratuit, prise de mesures à domicile, pose par nos
-                techniciens. Contactez le showroom Caséo Chambéry ou faites votre
-                demande en ligne.
+                techniciens. Contactez le showroom Caséo Chambéry ou faites
+                votre demande en ligne.
               </p>
             </div>
 
